@@ -2,7 +2,7 @@
 
 Name:           abiquo-core
 Version: 1.7
-Release: 2%{?dist}%{?buildstamp}
+Release: 3%{?dist}%{?buildstamp}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
@@ -10,7 +10,6 @@ Summary:        Abiquo Server core package
 Source0:        %{name}-%{version}.tar.gz
 Source1:        abiquo-release
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-Requires:	abiquo-tomcat-libs
 
 %description
 Abiquo is the Next Generation Cloud Management Solution
@@ -65,6 +64,9 @@ fi
 %{_sysconfdir}/abiquo-release
 
 %changelog
+* Mon Dec 20 2010 Sergio Rubio <srubio@abiquo.com> - 1.7-3
+- revert last requires
+
 * Fri Dec 17 2010 Sergio Rubio <srubio@abiquo.com - 1.7-2
 - requires abiquo-tomcat-libs
 
