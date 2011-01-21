@@ -2,7 +2,7 @@
 
 Name:           abiquo-core
 Version: 1.7
-Release: 3%{?dist}%{?buildstamp}
+Release: 4%{?dist}%{?buildstamp}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
@@ -64,6 +64,9 @@ fi
 %{_sysconfdir}/abiquo-release
 
 %changelog
+* Fri Jan 21 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-4
+- updated init script to include jpda option
+
 * Mon Dec 20 2010 Sergio Rubio <srubio@abiquo.com> - 1.7-3
 - revert last requires
 
