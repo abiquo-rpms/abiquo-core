@@ -2,7 +2,7 @@
 
 Name:           abiquo-core
 Version: 1.7
-Release: 4%{?dist}%{?buildstamp}
+Release: 5%{?dist}%{?buildstamp}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
@@ -64,6 +64,9 @@ fi
 %{_sysconfdir}/abiquo-release
 
 %changelog
+* Thu Jan 27 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-5
+- init script now delegates more control to abiquo-initenv
+
 * Fri Jan 21 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-4
 - updated init script to include jpda option
 
