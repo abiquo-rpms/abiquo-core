@@ -2,7 +2,7 @@
 
 Name:           abiquo-core
 Version: 1.7
-Release: 5%{?dist}%{?buildstamp}
+Release: 6.GA%{?dist}%{?buildstamp}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
@@ -64,6 +64,9 @@ fi
 %{_sysconfdir}/abiquo-release
 
 %changelog
+* Mon Jan 31 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-6.GA
+- GA build
+
 * Thu Jan 27 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-5
 - init script now delegates more control to abiquo-initenv
 
