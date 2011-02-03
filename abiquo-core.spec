@@ -2,7 +2,7 @@
 
 Name:           abiquo-core
 Version: 1.7
-Release: 6.GA%{?dist}%{?buildstamp}
+Release: 7.GA%{?dist}%{?buildstamp}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
@@ -64,6 +64,9 @@ fi
 %{_sysconfdir}/abiquo-release
 
 %changelog
+* Thu Feb 03 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-7.GA
+- fixed abiquo-tomcat.jar lib
+
 * Mon Jan 31 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-6.GA
 - GA build
 
