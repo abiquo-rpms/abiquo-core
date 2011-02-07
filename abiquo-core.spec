@@ -2,7 +2,7 @@
 
 Name:           abiquo-core
 Version: 1.7
-Release: 9%{?dist}%{?buildstamp}
+Release: 10%{?dist}%{?buildstamp}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
@@ -10,6 +10,7 @@ Summary:        Abiquo Server core package
 Source0:        %{name}-%{version}.tar.gz
 Source1:        abiquo-release
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+BuildArch:	noarch
 
 %description
 Abiquo is the Next Generation Cloud Management Solution
@@ -64,6 +65,9 @@ fi
 %{_sysconfdir}/abiquo-release
 
 %changelog
+* Mon Feb 07 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-10
+- set buildarch to noarch
+
 * Mon Feb 07 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-9
 - fix tomcat init script JAVA_HOME path
 
