@@ -2,7 +2,7 @@
 
 Name:           abiquo-core
 Version: 1.7
-Release: 10%{?dist}%{?buildstamp}
+Release: 11%{?dist}%{?buildstamp}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
@@ -65,6 +65,9 @@ fi
 %{_sysconfdir}/abiquo-release
 
 %changelog
+* Mon Feb 21 2011 Sergio Rubio <rubiojr@frameos.org> - 1.7-11
+- remove abiquo-initenv  script from abiquo-tomcat init script
+
 * Mon Feb 07 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-10
 - set buildarch to noarch
 
