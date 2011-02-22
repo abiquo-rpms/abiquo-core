@@ -2,7 +2,7 @@
 
 Name:           abiquo-core
 Version: 1.7
-Release: 12%{?dist}%{?buildstamp}
+Release: 13%{?dist}%{?buildstamp}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
@@ -68,6 +68,9 @@ fi
 %{_sysconfdir}/abiquo-release
 
 %changelog
+* Tue Feb 22 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-13
+- reverted port change
+
 * Tue Feb 22 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-12
 - set default port to 8080 again.
 - added sample server.xml to docs dir
