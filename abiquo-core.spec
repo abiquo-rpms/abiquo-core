@@ -2,13 +2,14 @@
 
 Name:           abiquo-core
 Version: 1.7
-Release: 11%{?dist}%{?buildstamp}
+Release: 12%{?dist}%{?buildstamp}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
 Summary:        Abiquo Server core package 
 Source0:        %{name}-%{version}.tar.gz
 Source1:        abiquo-release
+Source2:        server.xml
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:	noarch
 
@@ -30,11 +31,13 @@ rm -rf $RPM_BUILD_ROOT
 %install
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/
 mkdir -p $RPM_BUILD_ROOT%{_docdir}/%{name}
+mkdir -p $RPM_BUILD_ROOT%{_docdir}/%{name}/examples/tomcat/
 mkdir -p $RPM_BUILD_ROOT/%{abiquo_basedir}
 mkdir -p $RPM_BUILD_ROOT/opt/vm_repository
 cp -r tomcat $RPM_BUILD_ROOT/%{abiquo_basedir}
 install -m 755 scripts/abiquo-tomcat.init $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/abiquo-tomcat
 cp %{SOURCE1} $RPM_BUILD_ROOT/%{_sysconfdir}/
+cp %{SOURCE2} $RPM_BUILD_ROOT%{_docdir}/%{name}/examples/tomcat/
 
 %post
 /sbin/chkconfig --add abiquo-tomcat
@@ -65,6 +68,10 @@ fi
 %{_sysconfdir}/abiquo-release
 
 %changelog
+* Tue Feb 22 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-12
+- set default port to 8080 again.
+- added sample server.xml to docs dir
+
 * Mon Feb 21 2011 Sergio Rubio <rubiojr@frameos.org> - 1.7-11
 - remove abiquo-initenv  script from abiquo-tomcat init script
 
