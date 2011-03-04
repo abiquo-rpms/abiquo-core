@@ -1,15 +1,14 @@
 %define abiquo_basedir /opt/abiquo
 
 Name:           abiquo-core
-Version: 1.7
-Release: 13%{?dist}%{?buildstamp}
+Version: 1.7.5
+Release: 2%{?dist}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
 Summary:        Abiquo Server core package 
 Source0:        %{name}-%{version}.tar.gz
-Source1:        abiquo-release
-Source2:        server.xml
+Source1:        server.xml
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:	noarch
 
@@ -36,8 +35,7 @@ mkdir -p $RPM_BUILD_ROOT/%{abiquo_basedir}
 mkdir -p $RPM_BUILD_ROOT/opt/vm_repository
 cp -r tomcat $RPM_BUILD_ROOT/%{abiquo_basedir}
 install -m 755 scripts/abiquo-tomcat.init $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/abiquo-tomcat
-cp %{SOURCE1} $RPM_BUILD_ROOT/%{_sysconfdir}/
-cp %{SOURCE2} $RPM_BUILD_ROOT%{_docdir}/%{name}/examples/tomcat/
+cp %{SOURCE1} $RPM_BUILD_ROOT%{_docdir}/%{name}/examples/tomcat/
 
 %post
 /sbin/chkconfig --add abiquo-tomcat
@@ -65,9 +63,18 @@ fi
 /opt/vm_repository
 %config(noreplace) %{abiquo_basedir}/tomcat/conf/*
 %config %{_sysconfdir}/rc.d/init.d/abiquo-tomcat
-%{_sysconfdir}/abiquo-release
 
 %changelog
+* Fri Mar 04 2011 Sergio Rubio <srubio@abiquo.com> - 1.7.5-2
+- remove abiquo-release file 
+
+* Fri Mar 04 2011 Sergio Rubio <srubio@abiquo.com> - 1.7.5-1
+- added new properties to abiquo-tomcat.jar
+- bumped version 
+
+* Wed Mar 02 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-14
+- remove buildstamp from release
+
 * Tue Feb 22 2011 Sergio Rubio <srubio@abiquo.com> - 1.7-13
 - reverted port change
 
