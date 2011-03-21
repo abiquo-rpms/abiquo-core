@@ -2,7 +2,7 @@
 
 Name:           abiquo-core
 Version: 1.7.5
-Release: 2%{?dist}
+Release: 3%{?dist}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
@@ -65,6 +65,10 @@ fi
 %config %{_sysconfdir}/rc.d/init.d/abiquo-tomcat
 
 %changelog
+* Mon Mar 21 2011 Sergio Rubio <srubio@abiquo.com> - 1.7.5-3
+- bumped release
+- FIX: updated abiquo-tomcat.jar lib
+
 * Fri Mar 04 2011 Sergio Rubio <srubio@abiquo.com> - 1.7.5-2
 - remove abiquo-release file 
 
