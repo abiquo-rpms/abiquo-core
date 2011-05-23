@@ -1,7 +1,7 @@
 %define abiquo_basedir /opt/abiquo
 
 Name:           abiquo-core
-Version: 1.7.6
+Version: 1.8
 Release: 1%{?dist}
 Url:            http://www.abiquo.com/
 License:        Multiple
@@ -65,6 +65,9 @@ fi
 %config %{_sysconfdir}/rc.d/init.d/abiquo-tomcat
 
 %changelog
+* Mon May 23 2011 Sergio Rubio <srubio@abiquo.com> - 1.8-1
+- updated to 1.8
+
 * Mon Apr 18 2011 Sergio Rubio <srubio@abiquo.com> - 1.7.6-1
 - bumped version
 
