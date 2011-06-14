@@ -2,7 +2,7 @@
 
 Name:           abiquo-core
 Version: 1.8
-Release: 3%{?dist}
+Release: 4%{?dist}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
@@ -65,6 +65,9 @@ fi
 %config %{_sysconfdir}/rc.d/init.d/abiquo-tomcat
 
 %changelog
+* Tue Jun 14 2011 Sergio Rubio <rubiojr@frameos.org> - 1.8-4
+- updated default system properties
+
 * Tue Jun 14 2011 Sergio Rubio <rubiojr@frameos.org> - 1.8-3
 - updated default system properties
 
