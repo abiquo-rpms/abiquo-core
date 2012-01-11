@@ -1,13 +1,13 @@
 %define abiquo_basedir /opt/abiquo
 
 Name:           abiquo-core
-Version: 1.8
-Release: 5%{?dist}
+Version: 2.0
+Release: 1%{?dist}
 Url:            http://www.abiquo.com/
 License:        Multiple
 Group:          Development/Tools
 Summary:        Abiquo Server core package 
-Source0:        %{name}-%{version}.tar.gz
+Source0:        https://github.com/downloads/abiquo-rpms/abiquo-core/%{name}-%{version}.tar.gz
 Source1:        server.xml
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:	noarch
@@ -39,8 +39,6 @@ cp %{SOURCE1} $RPM_BUILD_ROOT%{_docdir}/%{name}/examples/tomcat/
 
 %post
 /sbin/chkconfig --add abiquo-tomcat
-echo "root soft nofile 4096" >> /etc/security/limits.conf
-echo "root hard nofile 10240" >> /etc/security/limits.conf
 
 %preun
 %{abiquo_basedir}/tomcat/bin/catalina.sh stop -force > /dev/null 2>&1
@@ -65,6 +63,12 @@ fi
 %config %{_sysconfdir}/rc.d/init.d/abiquo-tomcat
 
 %changelog
+* Fri Oct 21 2011 Sergio Rubio <rubiojr@frameos.org> - 2.0-1
+- Added new property managedrack
+- Do not try to add limits to /etc/security/limits.conf
+- Updated default remote repository location in abiquo.properties
+- Apache Tomcat updated to the last 6.0.35 version
+
 * Tue Jun 14 2011 Sergio Rubio <rubiojr@frameos.org> - 1.8-5
 - remove server/api context configs
 
